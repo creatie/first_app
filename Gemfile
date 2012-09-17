@@ -5,7 +5,12 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+#gem 'sqlite3'
+# problem with sqlite on heroku
+group :development do
 gem 'sqlite3'
+end
+gem 'pg'
 
 gem 'json'
 
@@ -21,13 +26,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :production, :staging do
-  gem "pg"
-end
 
-group :development, :test do
-  gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
-end
 
 gem 'jquery-rails'
 
